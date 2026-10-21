@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Get Booked Kit · Otova
 
-## Getting Started
+A responsive resource hub built with Next.js App Router, TypeScript, and React. The page includes the four Profit Pipeline steps, eight Google Docs/Sheets resources, a browser-saved setup checklist, and office-hours and agency-support links.
 
-First, run the development server:
+## Run locally
 
-```bash
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. Validate changes with `npm run lint` and `npm run build`. Run the production build with `npm start`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content and assets
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/page.tsx`: all supplied resource titles, descriptions, links, support copy, and the native responsive photo collage.
+- `src/app/globals.css`: warm editorial design, responsive layouts, visible focus states, and reduced-motion support.
+- `src/components/kit/KitNavigation.tsx`: scroll-aware navigation; compact horizontal navigation on mobile.
+- `src/components/kit/KitChecklist.tsx`: six setup steps, saved locally under `otova-kit-checklist-v1`. No account or server sync; storage failures fall back to in-memory progress.
+- `public/images/`: the three supplied photos. Next Image handles responsive sizing and optimized delivery without modifying the originals.
 
-## Learn More
+## Add the new walkthrough
 
-To learn more about Next.js, take a look at the following resources:
+The old sales video is intentionally removed. Until the new recording is ready, the walkthrough section shows a clearly labeled, non-interactive coming-soon placeholder.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_WALKTHROUGH_EMBED_URL` to the new video's HTTPS embed URL (for example, `https://player.vimeo.com/video/VIDEO_ID`). Add the same variable to the deployment environment and rebuild. Use the player/embed URL, not the public video watch URL. The player supports fullscreen and does not autoplay.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The setup checklist intentionally puts positioning and talk titles before opportunity research, matching the supplied walkthrough plan. Update those steps if the recording changes that order.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Build with `npm run build` and serve with `npm start`, or deploy as a Next.js project on your hosting provider. This checkout is not connected to a Git repository or deployment project. No deployment was performed.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Search engines are instructed not to index this customer resource hub. This is not authentication; apply the client's chosen access control at the hosting/application layer if access must be restricted. Google resource permissions are managed by their owners. The resource destinations are preserved exactly as supplied, including the Speaker's Vault shared-sheet URL.
+
+The legacy sales-page components remain in `src/components/` for reference but are not rendered by this hub. No checkout or purchase flow is included on this page.

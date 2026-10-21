@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 export function PricingBox() {
     const items = [
         { label: "Speaker One-Sheet Guide", value: "$47" },
-        { label: "Lead Magnet Formula", value: "$47" },
+        { label: "Lead Magnet Formula Worksheet", value: "$47" },
         { label: "Landing Page Template", value: "$97" },
         { label: "5 Welcome Sequence Email Templates", value: "$97" },
         { label: "Pitch Email Templates", value: "$47" },
@@ -17,7 +17,7 @@ export function PricingBox() {
             <div className="absolute top-0 inset-x-0 h-2 bg-primary" />
             <CardContent className="p-8 md:p-10">
                 <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-                    Here's What You're Getting
+                    Here’s What You’re Getting
                 </h3>
 
                 <ul className="space-y-4 mb-8">
