@@ -1,0 +1,1275 @@
+<!-- =====================================================================
+     THE GET BOOKED KIT · SALES PAGE (VSL)
+     Paste this entire file into ONE Squarespace Code Block.
+     Brand colors are the --gbk-* tokens at the top of the <style> tag.
+====================================================================== -->
+
+<!-- Extra weights of her heading font (Cormorant Garamond). Squarespace only loads 400/700,
+     and its copy has no lining numbers, so "$0" would read like "$o". -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap">
+
+<style>
+/* ---------------------------------------------------------------------
+   0. SQUARESPACE FRAME
+   Only touches the page section that contains this block.
+   - Removes the white bands above and below the page.
+   - Makes the block run edge to edge on phones (Fluid Engine adds side gutters).
+--------------------------------------------------------------------- */
+.page-section:has(.gbk-wrapper) > .content-wrapper { padding-top: 0 !important; padding-bottom: 0 !important; }
+.fe-block:has(.gbk-wrapper) { grid-column: 1 / -1 !important; }
+
+/* ---------------------------------------------------------------------
+   1. TOKENS
+--------------------------------------------------------------------- */
+.gbk-wrapper {
+  /* Brand colors (unchanged) */
+  --gbk-bg: #fff3f0;
+  --gbk-text: #5c3325;
+  --gbk-primary: #eda18a;
+  --gbk-primary-hover: #e0947e;
+  --gbk-card-bg: #ffffff;
+  --gbk-muted: #f6f6f6;
+  --gbk-muted-text: rgba(92, 51, 37, 0.78);
+  --gbk-border: rgba(92, 51, 37, 0.15);
+  --gbk-border-light: rgba(92, 51, 37, 0.08);
+
+  /* Tints of the same brand colors */
+  --gbk-primary-soft: rgba(237, 161, 138, 0.15);
+  --gbk-primary-mid: rgba(237, 161, 138, 0.4);
+  --gbk-primary-line: rgba(237, 161, 138, 0.65);
+
+  --gbk-shadow-sm: 0 1px 2px rgba(92, 51, 37, 0.04), 0 8px 22px -12px rgba(92, 51, 37, 0.14);
+  --gbk-shadow-md: 0 2px 6px rgba(92, 51, 37, 0.04), 0 24px 48px -22px rgba(92, 51, 37, 0.24);
+  --gbk-shadow-lg: 0 6px 14px rgba(92, 51, 37, 0.05), 0 50px 90px -38px rgba(92, 51, 37, 0.4);
+
+  /* Her site fonts, already loaded by Squarespace (headings / body) */
+  --gbk-font-display: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+  --gbk-font-body: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --gbk-radius: 20px;
+  --gbk-radius-lg: 28px;
+  --gbk-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  position: relative;
+  isolation: isolate;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-x: clip;
+  background: var(--gbk-bg);
+  color: var(--gbk-text);
+  font-family: var(--gbk-font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  letter-spacing: normal;
+  text-align: left;
+  font-variant-numeric: lining-nums;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  interpolate-size: allow-keywords;
+}
+
+/* ---------------------------------------------------------------------
+   2. RESET (scoped to this page only)
+--------------------------------------------------------------------- */
+.gbk-wrapper *, .gbk-wrapper *::before, .gbk-wrapper *::after { box-sizing: border-box; }
+.gbk-wrapper :where(h1, h2, h3, p, ul, ol, li, figure, blockquote, table) { margin: 0; padding: 0; }
+.gbk-wrapper :where(h1, h2, h3) {
+  /* !important beats the site-wide "Sprat" heading rule, whose font file no longer exists */
+  font-family: var(--gbk-font-display) !important;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: inherit;
+  text-wrap: balance;
+}
+.gbk-wrapper :where(p, li) { text-wrap: pretty; }
+.gbk-wrapper strong { font-weight: 700; }
+.gbk-wrapper a { -webkit-tap-highlight-color: transparent; }
+.gbk-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.gbk-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------------------------------------------------------------------
+   3. LAYOUT + TYPE
+--------------------------------------------------------------------- */
+.gbk-container { width: 100%; max-width: 1180px; margin-inline: auto; padding-inline: clamp(1.25rem, 4.5vw, 2.5rem); }
+.gbk-container--mid { max-width: 980px; }
+.gbk-container--text { max-width: 800px; }
+.gbk-center { text-align: center; }
+.gbk-muted { color: var(--gbk-muted-text); }
+
+.gbk-section { position: relative; padding-block: clamp(4.75rem, 3rem + 6.5vw, 8.5rem); }
+.gbk-section--alt { background: var(--gbk-muted); }
+
+.gbk-head { max-width: 820px; margin: 0 auto clamp(2.75rem, 5vw, 4.25rem); text-align: center; }
+.gbk-head > * + * { margin-top: 1.15rem; }
+
+.gbk-display { font-size: clamp(2.85rem, 1.2rem + 6.2vw, 5.6rem); line-height: 0.98; letter-spacing: -0.02em; }
+.gbk-h2 { font-size: clamp(2.15rem, 1.35rem + 2.9vw, 3.5rem); line-height: 1.04; letter-spacing: -0.015em; }
+.gbk-h3 { font-size: clamp(1.45rem, 1.2rem + 0.9vw, 1.8rem); font-weight: 600; line-height: 1.2; letter-spacing: 0; }
+.gbk-accent { font-style: italic; color: var(--gbk-primary); }
+.gbk-wrapper :where(h1, h2) > .gbk-accent { display: block; } /* own line, balanced separately */
+
+.gbk-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--gbk-font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gbk-text);
+}
+.gbk-eyebrow::before, .gbk-eyebrow::after { content: ""; width: 1.75rem; height: 1px; background: var(--gbk-primary); }
+
+.gbk-lede { font-size: clamp(1.1rem, 1rem + 0.45vw, 1.3rem); line-height: 1.6; color: var(--gbk-muted-text); }
+
+.gbk-prose { font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); line-height: 1.75; }
+.gbk-prose > * + * { margin-top: 1.1em; }
+
+.gbk-opening { font-family: var(--gbk-font-display); font-weight: 500; font-size: clamp(1.6rem, 1.25rem + 1.3vw, 2.1rem); line-height: 1.28; }
+.gbk-beat { font-family: var(--gbk-font-display); font-style: italic; font-weight: 500; font-size: clamp(1.65rem, 1.3rem + 1.2vw, 2.15rem); line-height: 1.2; }
+.gbk-beat--xl { font-size: clamp(2.5rem, 1.7rem + 2.8vw, 3.6rem); line-height: 1; }
+.gbk-pull { font-family: var(--gbk-font-display); font-style: italic; font-weight: 500; font-size: clamp(2rem, 1.4rem + 2.2vw, 2.9rem); line-height: 1.12; letter-spacing: -0.01em; }
+.gbk-prose > .gbk-pull { margin-block: 0.8em; }
+.gbk-prose > .gbk-beat--xl { margin-block: 0.45em; }
+.gbk-mark {
+  background-image: linear-gradient(transparent 60%, var(--gbk-primary-mid) 60%, var(--gbk-primary-mid) 92%, transparent 92%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding-inline: 0.12em;
+  margin-inline: -0.12em;
+}
+
+/* ---------------------------------------------------------------------
+   4. BUTTONS + LINKS
+--------------------------------------------------------------------- */
+.gbk-wrapper .gbk-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.15rem 2.25rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--gbk-primary);
+  color: var(--gbk-text);
+  font-family: var(--gbk-font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 14px 28px -12px rgba(224, 148, 126, 0.85);
+  transition: transform 0.35s var(--gbk-ease), box-shadow 0.35s var(--gbk-ease), background-color 0.25s ease;
+}
+.gbk-wrapper .gbk-btn .gbk-icon { width: 1.1em; height: 1.1em; stroke-width: 2.2; transition: transform 0.35s var(--gbk-ease); }
+.gbk-wrapper .gbk-btn:hover {
+  background: var(--gbk-primary-hover);
+  color: var(--gbk-text);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 20px 36px -14px rgba(224, 148, 126, 0.95);
+}
+.gbk-wrapper .gbk-btn:hover .gbk-icon { transform: translateX(4px); }
+.gbk-wrapper .gbk-btn:focus-visible { outline: 2px solid var(--gbk-text); outline-offset: 4px; }
+.gbk-wrapper .gbk-btn--lg { padding: 1.3rem 2.6rem; font-size: 1rem; }
+.gbk-wrapper .gbk-btn--xl { padding: 1.5rem 3.25rem; font-size: 1.05rem; }
+.gbk-wrapper .gbk-btn--block { display: flex; width: 100%; }
+.gbk-cta-row { margin-top: clamp(2.5rem, 5vw, 3.75rem); text-align: center; }
+
+.gbk-wrapper .gbk-textlink {
+  color: var(--gbk-text);
+  text-decoration: underline;
+  text-decoration-color: var(--gbk-primary);
+  text-decoration-thickness: 1px !important; /* the site's global link rule sets .5px */
+  text-underline-offset: 0.3em !important;
+  transition: text-decoration-color 0.25s ease;
+}
+.gbk-wrapper .gbk-textlink:hover { color: var(--gbk-text); text-decoration-color: var(--gbk-text); }
+.gbk-wrapper .gbk-textlink:focus-visible { outline: 2px solid var(--gbk-text); outline-offset: 3px; }
+.gbk-textlink .gbk-icon { display: inline-block; width: 0.95rem; height: 0.95rem; margin-left: 0.3rem; vertical-align: -0.15em; }
+
+/* ---------------------------------------------------------------------
+   5. HERO
+--------------------------------------------------------------------- */
+.gbk-hero { position: relative; padding-block: clamp(3.75rem, 2rem + 6vw, 7rem) clamp(4.75rem, 3rem + 6vw, 8rem); text-align: center; }
+.gbk-hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 22%;
+  width: min(1250px, 170vw);
+  height: min(950px, 130vw);
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(237, 161, 138, 0.3), rgba(237, 161, 138, 0.1) 55%, rgba(237, 161, 138, 0) 100%);
+  pointer-events: none;
+}
+.gbk-hero .gbk-eyebrow { margin-bottom: 1.6rem; }
+.gbk-hero__lede { max-width: 34rem; margin: 1.6rem auto 0; }
+
+.gbk-video {
+  position: relative;
+  max-width: 980px;
+  margin: clamp(2.75rem, 5vw, 4rem) auto 0;
+  padding: clamp(6px, 0.9vw, 10px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #ffffff;
+  border-radius: clamp(20px, 3vw, 36px);
+  box-shadow: var(--gbk-shadow-lg);
+}
+.gbk-video__frame {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+  border-radius: clamp(14px, 2.4vw, 28px);
+  overflow: hidden;
+  background: #2b1a14;
+  transform: translateZ(0);
+}
+.gbk-video__frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+.gbk-video__caption { display: grid; justify-items: center; gap: 0.5rem; margin-top: 1.6rem; font-size: 0.98rem; line-height: 1.55; color: var(--gbk-muted-text); }
+.gbk-video__watch { display: inline-flex; align-items: center; gap: 0.55rem; }
+.gbk-video__watch .gbk-icon { color: var(--gbk-primary); width: 1.3rem; height: 1.3rem; }
+.gbk-video__read { font-size: 0.9rem; text-align: center; }
+
+.gbk-hero__cta { display: grid; justify-items: center; gap: 1.25rem; margin-top: clamp(2.75rem, 5vw, 3.75rem); }
+.gbk-hero__ask { font-family: var(--gbk-font-display); font-style: italic; font-weight: 500; font-size: clamp(1.55rem, 1.2rem + 1.1vw, 2.05rem); line-height: 1.2; }
+.gbk-assure { display: inline-flex; align-items: flex-start; gap: 0.55rem; max-width: 30rem; font-size: 0.88rem; line-height: 1.55; color: var(--gbk-muted-text); text-align: left; }
+.gbk-assure .gbk-icon { width: 1.1rem; height: 1.1rem; margin-top: 0.12rem; color: var(--gbk-text); }
+
+/* ---------------------------------------------------------------------
+   6. THE LETTER
+--------------------------------------------------------------------- */
+.gbk-paper { position: relative; max-width: 920px; margin-inline: auto; }
+.gbk-paper > .gbk-prose { max-width: 680px; margin-inline: auto; }
+@media (min-width: 768px) {
+  .gbk-paper {
+    background: var(--gbk-card-bg);
+    border: 1px solid var(--gbk-border-light);
+    border-radius: var(--gbk-radius-lg);
+    box-shadow: var(--gbk-shadow-md);
+    padding: clamp(3.5rem, 7vw, 6rem) clamp(2.5rem, 7vw, 6rem);
+  }
+}
+
+.gbk-ornament { display: flex; align-items: center; gap: 1.1rem; color: var(--gbk-primary); }
+.gbk-ornament::before, .gbk-ornament::after { content: ""; flex: 1; height: 1px; background: var(--gbk-border); }
+.gbk-ornament svg { width: 14px; height: 14px; fill: currentColor; }
+.gbk-prose > .gbk-ornament { margin-block: 3.25rem 2.75rem; }
+.gbk-prose > h2 + * { margin-top: 1.4rem; }
+
+.gbk-math {
+  background: var(--gbk-bg);
+  border: 1px solid var(--gbk-primary-mid);
+  border-radius: var(--gbk-radius);
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+}
+.gbk-prose > .gbk-math { margin-block: 2.5rem; }
+.gbk-math > * + * { margin-top: 0.9em; }
+.gbk-math .gbk-h3 { margin-bottom: 0.2em; }
+
+.gbk-prose > .gbk-tableblock { margin-top: clamp(3.5rem, 7vw, 5rem); }
+.gbk-tableblock { text-align: center; }
+.gbk-tableblock > * + * { margin-top: 1rem; }
+.gbk-tableblock .gbk-h2 { font-size: clamp(1.95rem, 1.3rem + 2.4vw, 2.9rem); }
+.gbk-tableblock__kicker { font-family: var(--gbk-font-display); font-style: italic; font-weight: 600; font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.75rem); line-height: 1.25; }
+
+.gbk-tableblock > .gbk-compare { margin-top: 2rem; }
+.gbk-compare { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; text-align: left; font-size: 0.95rem; line-height: 1.4; }
+.gbk-compare th, .gbk-compare td { padding: 1rem clamp(0.8rem, 2.6vw, 1.5rem); vertical-align: top; border-bottom: 1px solid var(--gbk-border-light); font-weight: 400; }
+.gbk-compare thead th { font-family: var(--gbk-font-body); font-size: 0.7rem; font-weight: 700; line-height: 1.4; letter-spacing: 0.18em; text-transform: uppercase; padding-block: 1.2rem; border-bottom-color: var(--gbk-border); }
+.gbk-compare :is(th, td):first-child { color: var(--gbk-muted-text); }
+.gbk-compare :is(th, td):last-child { background: var(--gbk-bg); border-left: 1px solid var(--gbk-primary-line); border-right: 1px solid var(--gbk-primary-line); }
+.gbk-compare thead th:last-child { border-top: 1px solid var(--gbk-primary-line); border-radius: 18px 18px 0 0; color: var(--gbk-text); }
+.gbk-compare tfoot td { border-bottom: 0; padding-block: 1.3rem 1.45rem; }
+.gbk-compare tfoot td:last-child { border-bottom: 1px solid var(--gbk-primary-line); border-radius: 0 0 18px 18px; }
+.gbk-compare__stage td { font-weight: 700; }
+.gbk-num { display: block; margin-bottom: 0.3rem; font-family: var(--gbk-font-display); font-weight: 600; font-size: clamp(1.75rem, 1.35rem + 1.3vw, 2.3rem); line-height: 1; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; color: var(--gbk-text); }
+.gbk-compare td:first-child .gbk-num { color: var(--gbk-muted-text); }
+.gbk-total { display: inline; font-family: var(--gbk-font-display); font-weight: 600; font-size: clamp(1.5rem, 1rem + 2.1vw, 2.5rem); line-height: 1.05; letter-spacing: -0.01em; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+.gbk-compare tfoot td:last-child .gbk-total { color: var(--gbk-text); }
+.gbk-footnote { font-size: 0.8rem; color: var(--gbk-muted-text); }
+
+.gbk-prose > .gbk-close { margin-top: clamp(2.75rem, 6vw, 3.75rem); }
+.gbk-close > * + * { margin-top: 1.1em; }
+.gbk-close__lead { font-size: 1.1em; line-height: 1.55; padding-left: 1.25rem; border-left: 3px solid var(--gbk-primary); }
+.gbk-close > .gbk-close__final {
+  position: relative;
+  margin-top: 2.25rem;
+  padding-top: 1.75rem;
+  font-family: var(--gbk-font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.8rem, 1.35rem + 1.6vw, 2.45rem);
+  line-height: 1.15;
+}
+.gbk-close__final::before { content: ""; position: absolute; top: 0; left: 0; width: 3rem; height: 2px; background: var(--gbk-primary); }
+
+/* ---------------------------------------------------------------------
+   7. THE PROFIT PIPELINE
+--------------------------------------------------------------------- */
+.gbk-solution .gbk-h2 { text-align: center; margin-bottom: clamp(2.25rem, 4vw, 3.25rem); }
+.gbk-steps-label { margin-top: clamp(3rem, 6vw, 4.5rem); text-align: center; font-weight: 700; font-size: 1.05rem; }
+.gbk-pipeline { list-style: none; display: grid; gap: 1rem; grid-template-columns: 1fr; margin: 1.75rem auto clamp(3rem, 6vw, 4.5rem); }
+@media (min-width: 700px) { .gbk-pipeline { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; } }
+@media (min-width: 1040px) { .gbk-pipeline { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.gbk-step {
+  position: relative;
+  background: var(--gbk-card-bg);
+  border: 1px solid var(--gbk-border-light);
+  border-radius: var(--gbk-radius);
+  padding: 1.75rem 1.5rem 1.9rem;
+  box-shadow: var(--gbk-shadow-sm);
+}
+.gbk-step__num {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 1.2rem;
+  border-radius: 50%;
+  background: var(--gbk-primary);
+  color: var(--gbk-text);
+  font-family: var(--gbk-font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1;
+  font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1;
+}
+.gbk-step__title { font-size: 1.5rem; font-weight: 600; line-height: 1.15; margin-bottom: 0.55rem; }
+.gbk-step p { font-size: 0.98rem; line-height: 1.6; color: var(--gbk-muted-text); }
+@media (min-width: 1040px) {
+  .gbk-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 3.1rem;
+    right: -1.25rem;
+    width: 1.25rem;
+    height: 1px;
+    background: var(--gbk-primary);
+  }
+}
+
+/* ---------------------------------------------------------------------
+   8. WHAT'S INSIDE
+--------------------------------------------------------------------- */
+.gbk-inside-label { font-weight: 700; font-size: 1.05rem; }
+.gbk-features { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 700px) { .gbk-features { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1040px) { .gbk-features { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.gbk-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: var(--gbk-card-bg);
+  border: 1px solid var(--gbk-border-light);
+  border-radius: var(--gbk-radius);
+  padding: clamp(1.75rem, 3vw, 2.25rem);
+  box-shadow: var(--gbk-shadow-sm);
+}
+.gbk-feature__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem; }
+.gbk-feature__icon { display: grid; place-items: center; width: 3.25rem; height: 3.25rem; border-radius: 16px; background: var(--gbk-primary-soft); color: var(--gbk-primary); }
+.gbk-feature__icon .gbk-icon { width: 1.6rem; height: 1.6rem; stroke-width: 1.9; }
+.gbk-feature__index { font-family: var(--gbk-font-display); font-style: italic; font-weight: 600; font-size: 1.45rem; line-height: 1; color: var(--gbk-primary); font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+.gbk-feature__title { font-size: 1.6rem; font-weight: 600; line-height: 1.15; }
+.gbk-feature p { font-size: 1rem; line-height: 1.65; color: var(--gbk-muted-text); }
+
+/* ---------------------------------------------------------------------
+   9. THE OFFER
+--------------------------------------------------------------------- */
+.gbk-offer {
+  position: relative;
+  max-width: 640px;
+  margin-inline: auto;
+  overflow: hidden;
+  background: var(--gbk-card-bg);
+  border: 1px solid var(--gbk-border-light);
+  border-radius: var(--gbk-radius-lg);
+  box-shadow: var(--gbk-shadow-lg);
+  padding: clamp(2.5rem, 6vw, 3.75rem) clamp(1.4rem, 5vw, 3.25rem) clamp(2rem, 5vw, 3rem);
+}
+.gbk-offer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: var(--gbk-primary); }
+.gbk-offer .gbk-h2 { text-align: center; }
+.gbk-receipt { list-style: none; margin-top: 2rem; }
+.gbk-receipt li { display: flex; align-items: baseline; gap: 0.6rem; padding: 0.7rem 0; font-size: 1rem; line-height: 1.4; }
+.gbk-receipt__item { display: inline-flex; align-items: center; gap: 0.65rem; }
+.gbk-receipt__item .gbk-icon { width: 1.05rem; height: 1.05rem; stroke-width: 2.5; color: var(--gbk-primary); align-self: center; }
+.gbk-receipt__leader { flex: 1 1 auto; min-width: 1rem; border-bottom: 2px dotted var(--gbk-border); transform: translateY(-0.3rem); }
+.gbk-receipt__price { flex: none; font-weight: 700; font-variant-numeric: tabular-nums; }
+.gbk-offer__total { margin-top: 1.75rem; padding-top: 1.9rem; border-top: 1px solid var(--gbk-border); text-align: center; }
+.gbk-offer__value { font-size: 1.05rem; color: var(--gbk-muted-text); }
+.gbk-offer__value s { text-decoration-thickness: 2px; text-decoration-color: var(--gbk-primary); }
+.gbk-offer__price { display: flex; align-items: baseline; justify-content: center; flex-wrap: wrap; gap: 0.2rem 0.8rem; margin-top: 0.6rem; }
+.gbk-offer__price span { font-family: var(--gbk-font-display); font-style: italic; font-weight: 500; font-size: 1.6rem; color: var(--gbk-muted-text); }
+.gbk-price {
+  font-family: var(--gbk-font-display);
+  font-weight: 600;
+  font-size: clamp(4.25rem, 3rem + 4.5vw, 5.75rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1;
+  color: var(--gbk-text);
+  background-image: linear-gradient(transparent 64%, var(--gbk-primary-mid) 64%, var(--gbk-primary-mid) 88%, transparent 88%);
+  padding-inline: 0.1em;
+}
+.gbk-offer__notes { max-width: 26rem; margin: 1.5rem auto 2rem; font-size: 0.95rem; line-height: 1.6; color: var(--gbk-muted-text); }
+.gbk-offer__notes > * + * { margin-top: 0.8rem; }
+.gbk-offer__trust { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem 1.4rem; margin-top: 1.1rem; font-size: 0.82rem; color: var(--gbk-muted-text); }
+.gbk-offer__trust span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.gbk-offer__trust .gbk-icon { width: 0.95rem; height: 0.95rem; color: var(--gbk-text); }
+
+/* ---------------------------------------------------------------------
+   10. HOW IT WORKS
+--------------------------------------------------------------------- */
+.gbk-how { display: grid; gap: clamp(2.5rem, 5vw, 4rem); }
+.gbk-how__head { text-align: center; }
+.gbk-how__head > * + * { margin-top: 1.15rem; }
+@media (min-width: 960px) {
+  .gbk-how { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); align-items: start; }
+  .gbk-how__head { position: sticky; top: 3rem; text-align: left; }
+}
+.gbk-timeline { list-style: none; position: relative; display: grid; gap: 1.25rem; }
+.gbk-timeline::before { content: ""; position: absolute; left: calc(1.375rem - 0.5px); top: 1.5rem; bottom: 1.5rem; width: 1px; background: linear-gradient(var(--gbk-primary), var(--gbk-primary-mid)); }
+.gbk-tstep { position: relative; display: grid; grid-template-columns: 2.75rem minmax(0, 1fr); gap: 1.1rem; align-items: start; }
+.gbk-tstep__num {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-top: 1.1rem;
+  border-radius: 50%;
+  background: var(--gbk-primary);
+  color: var(--gbk-text);
+  font-family: var(--gbk-font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1;
+  font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1;
+  box-shadow: 0 0 0 6px var(--gbk-muted);
+}
+.gbk-tstep__card { background: var(--gbk-card-bg); border: 1px solid var(--gbk-border-light); border-radius: var(--gbk-radius); padding: 1.5rem 1.75rem 1.6rem; box-shadow: var(--gbk-shadow-sm); }
+.gbk-tstep__title { font-size: 1.55rem; font-weight: 600; line-height: 1.15; margin-bottom: 0.45rem; }
+.gbk-tstep p { font-size: 1rem; line-height: 1.65; color: var(--gbk-muted-text); }
+.gbk-how__outro { margin-top: clamp(3.5rem, 7vw, 5rem); text-align: center; }
+.gbk-how__outro > * + * { margin-top: 1rem; }
+.gbk-how__outro p:last-child { font-size: 1.125rem; }
+
+/* ---------------------------------------------------------------------
+   11. WHO IT'S FOR
+--------------------------------------------------------------------- */
+.gbk-fit { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 860px) { .gbk-fit { grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr); align-items: stretch; } }
+.gbk-fit__card { display: flex; flex-direction: column; border-radius: var(--gbk-radius-lg); padding: clamp(1.75rem, 4vw, 2.75rem); }
+.gbk-fit__card--yes { background: var(--gbk-card-bg); border: 1px solid var(--gbk-primary-line); box-shadow: var(--gbk-shadow-md); }
+.gbk-fit__card--no { background: rgba(255, 255, 255, 0.45); border: 1px solid var(--gbk-border); }
+.gbk-fit__title { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.6rem; font-size: clamp(1.65rem, 1.35rem + 1vw, 2.05rem); font-weight: 600; line-height: 1.15; }
+.gbk-fit__badge { display: grid; place-items: center; flex: none; width: 2.5rem; height: 2.5rem; border-radius: 50%; }
+.gbk-fit__badge .gbk-icon { width: 1.15rem; height: 1.15rem; stroke-width: 2.5; }
+.gbk-fit__card--yes .gbk-fit__badge { background: var(--gbk-primary); color: var(--gbk-text); }
+.gbk-fit__card--no .gbk-fit__badge { background: rgba(92, 51, 37, 0.07); color: var(--gbk-muted-text); }
+.gbk-fit__card--no .gbk-fit__title { color: var(--gbk-muted-text); }
+.gbk-fit__list { list-style: none; display: grid; align-content: start; gap: 1rem; flex-grow: 1; margin-bottom: 1.75rem; }
+.gbk-fit__list li { display: grid; grid-template-columns: 1.2rem minmax(0, 1fr); gap: 0.85rem; font-size: 1rem; line-height: 1.6; }
+.gbk-fit__list .gbk-icon { width: 1.1rem; height: 1.1rem; margin-top: 0.22rem; stroke-width: 2.5; }
+.gbk-fit__card--yes .gbk-fit__list .gbk-icon { color: var(--gbk-primary); }
+.gbk-fit__card--no .gbk-fit__list li { color: var(--gbk-muted-text); }
+.gbk-fit__card--no .gbk-fit__list .gbk-icon { opacity: 0.6; }
+.gbk-fit__callout { background: var(--gbk-bg); border-left: 3px solid var(--gbk-primary); border-radius: 0 var(--gbk-radius) var(--gbk-radius) 0; padding: 1.5rem 1.6rem; font-size: 0.98rem; line-height: 1.65; }
+.gbk-fit__callout > * + * { margin-top: 0.85rem; }
+.gbk-fit__callout-kicker { font-family: var(--gbk-font-display); font-style: italic; font-weight: 600; font-size: 1.4rem; line-height: 1.25; }
+.gbk-fit__footer { margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--gbk-border); text-align: center; font-size: 0.72rem; font-weight: 700; line-height: 1.7; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gbk-muted-text); }
+
+/* ---------------------------------------------------------------------
+   12. PROOF
+--------------------------------------------------------------------- */
+.gbk-measure { max-width: 720px; margin-inline: auto; }
+.gbk-kicker { margin-bottom: 2.5rem; text-align: center; font-weight: 700; font-size: 1.15rem; }
+.gbk-quote {
+  position: relative;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  background: var(--gbk-card-bg);
+  border: 1px solid var(--gbk-border-light);
+  border-radius: var(--gbk-radius-lg);
+  box-shadow: var(--gbk-shadow-md);
+  padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 3.25rem) clamp(2rem, 4vw, 3rem);
+}
+.gbk-quote__mark { position: absolute; top: -1.6rem; left: clamp(1.5rem, 5vw, 3.25rem); display: grid; place-items: center; width: 3.2rem; height: 3.2rem; border-radius: 50%; background: var(--gbk-primary); color: var(--gbk-text); box-shadow: 0 0 0 6px var(--gbk-muted); }
+.gbk-quote__mark svg { width: 1.3rem; height: 1.3rem; fill: currentColor; }
+.gbk-quote blockquote p { font-family: var(--gbk-font-display); font-style: italic; font-weight: 500; font-size: clamp(1.45rem, 1.15rem + 1.2vw, 2rem); line-height: 1.35; }
+
+/* ---------------------------------------------------------------------
+   13. FAQ (native <details>: works even if scripts are off)
+--------------------------------------------------------------------- */
+.gbk-faq { display: grid; gap: 0.85rem; max-width: 820px; margin-inline: auto; }
+.gbk-faq__item { background: var(--gbk-card-bg); border: 1px solid var(--gbk-border-light); border-radius: 18px; box-shadow: var(--gbk-shadow-sm); transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.gbk-faq__item[open] { border-color: var(--gbk-primary-line); box-shadow: var(--gbk-shadow-md); }
+.gbk-faq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.3rem clamp(1.25rem, 3vw, 1.75rem);
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--gbk-font-display);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.45rem);
+  line-height: 1.25;
+  color: var(--gbk-text);
+  border-radius: 18px;
+}
+.gbk-faq__q::-webkit-details-marker { display: none; }
+.gbk-faq__q::marker { content: ""; }
+.gbk-faq__q:hover .gbk-faq__icon { background: var(--gbk-primary-mid); }
+.gbk-faq__q:focus-visible { outline: 2px solid var(--gbk-text); outline-offset: 3px; }
+.gbk-faq__icon { position: relative; flex: none; width: 2.1rem; height: 2.1rem; border-radius: 50%; background: var(--gbk-primary-soft); transition: background-color 0.3s ease; }
+.gbk-faq__icon::before, .gbk-faq__icon::after { content: ""; position: absolute; left: 50%; top: 50%; width: 0.8rem; height: 1.5px; background: var(--gbk-text); transform: translate(-50%, -50%); transition: transform 0.4s var(--gbk-ease); }
+.gbk-faq__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+.gbk-faq__item[open] .gbk-faq__icon { background: var(--gbk-primary); }
+.gbk-faq__item[open] .gbk-faq__icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+.gbk-faq__a { padding: 0 clamp(1.25rem, 3vw, 1.75rem) 1.5rem; font-size: 1rem; line-height: 1.7; color: var(--gbk-muted-text); }
+.gbk-faq__a > * + * { margin-top: 0.85em; }
+@supports selector(::details-content) {
+  .gbk-faq__item::details-content { block-size: 0; overflow-y: clip; transition: block-size 0.45s var(--gbk-ease), content-visibility 0.45s allow-discrete; }
+  .gbk-faq__item[open]::details-content { block-size: auto; }
+}
+
+/* ---------------------------------------------------------------------
+   14. OBJECTION + GUARANTEE
+--------------------------------------------------------------------- */
+.gbk-objection { background: var(--gbk-card-bg); border: 1px solid var(--gbk-border-light); border-radius: var(--gbk-radius-lg); box-shadow: var(--gbk-shadow-sm); padding: clamp(2.25rem, 5vw, 3.75rem) clamp(1.5rem, 5vw, 3.75rem); text-align: center; }
+.gbk-objection > * + * { margin-top: 1.1rem; }
+.gbk-objection__quote { font-family: var(--gbk-font-display); font-style: italic; font-weight: 500; font-size: clamp(1.4rem, 1.15rem + 1vw, 1.85rem); line-height: 1.3; color: var(--gbk-muted-text); }
+.gbk-objection > .gbk-objection__quote { margin-top: 1.4rem; margin-bottom: 1.6rem; }
+.gbk-guarantee {
+  position: relative;
+  margin-top: clamp(5rem, 9vw, 6rem);
+  background: var(--gbk-bg);
+  border: 1px solid var(--gbk-primary-line);
+  border-radius: var(--gbk-radius-lg);
+  padding: clamp(4.5rem, 8vw, 5.25rem) clamp(1.5rem, 5vw, 3.75rem) clamp(2.5rem, 5vw, 3.5rem);
+  text-align: center;
+}
+.gbk-guarantee > * + * { margin-top: 1.1rem; }
+.gbk-guarantee p { max-width: 44rem; margin-inline: auto; }
+.gbk-guarantee__body { font-size: 1.1rem; line-height: 1.7; color: var(--gbk-muted-text); }
+.gbk-guarantee__body strong { color: var(--gbk-text); }
+.gbk-guarantee__kicker { font-family: var(--gbk-font-display); font-style: italic; font-weight: 600; font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.75rem); }
+.gbk-guarantee .gbk-btn { margin-top: 1.9rem; }
+.gbk-seal { position: absolute; top: 0; left: 50%; width: 116px; height: 116px; transform: translate(-50%, -50%); filter: drop-shadow(0 14px 20px rgba(92, 51, 37, 0.2)); }
+.gbk-seal__bg { fill: var(--gbk-primary); }
+.gbk-seal__inner { fill: none; stroke: rgba(92, 51, 37, 0.35); stroke-width: 0.8; stroke-dasharray: 1.5 2.5; }
+.gbk-seal__text { font-family: var(--gbk-font-body); font-size: 8.2px; font-weight: 700; letter-spacing: 1.4px; fill: var(--gbk-text); }
+.gbk-seal__num { font-family: var(--gbk-font-display); font-size: 38px; font-weight: 600; fill: var(--gbk-text); font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+.gbk-seal__days { font-family: var(--gbk-font-body); font-size: 7.5px; font-weight: 700; letter-spacing: 2.4px; fill: var(--gbk-text); }
+.gbk-seal__ring { transform-box: view-box; transform-origin: 60px 60px; animation: gbk-spin 36s linear infinite; }
+@keyframes gbk-spin { to { transform: rotate(360deg); } }
+
+/* ---------------------------------------------------------------------
+   15. FINAL CTA + P.S.
+--------------------------------------------------------------------- */
+.gbk-final { text-align: center; }
+.gbk-final .gbk-display { font-size: clamp(2.6rem, 1.2rem + 5.2vw, 5rem); }
+.gbk-final__belief { max-width: 780px; margin: clamp(2.25rem, 4vw, 3rem) auto 0; }
+.gbk-final__belief > * + * { margin-top: 1rem; }
+.gbk-final__belief p:first-child { font-size: 1.125rem; }
+.gbk-final__statement { font-family: var(--gbk-font-display); font-style: italic; font-weight: 600; font-size: clamp(1.55rem, 1.2rem + 1.3vw, 2.1rem); line-height: 1.3; }
+.gbk-final__lines { max-width: 780px; margin: 2rem auto 0; font-size: 1.125rem; }
+.gbk-final__lines > * + * { margin-top: 0.6rem; }
+.gbk-checkcard { max-width: 620px; margin: clamp(2.5rem, 5vw, 3.5rem) auto; text-align: left; background: var(--gbk-card-bg); border: 1px solid var(--gbk-border-light); border-radius: var(--gbk-radius-lg); box-shadow: var(--gbk-shadow-md); padding: clamp(1.75rem, 4vw, 2.5rem); }
+.gbk-checkcard__title { margin-bottom: 1.35rem; text-align: center; font-family: var(--gbk-font-display); font-weight: 600; font-size: clamp(1.4rem, 1.2rem + 0.7vw, 1.65rem); line-height: 1.25; }
+.gbk-checks { list-style: none; display: grid; gap: 0.9rem; }
+.gbk-checks li { display: grid; grid-template-columns: 1.6rem minmax(0, 1fr); gap: 0.8rem; align-items: start; line-height: 1.55; }
+.gbk-tick { display: grid; place-items: center; width: 1.6rem; height: 1.6rem; border-radius: 50%; background: var(--gbk-primary); color: var(--gbk-text); }
+.gbk-tick .gbk-icon { width: 0.85rem; height: 0.85rem; stroke-width: 3; }
+.gbk-final__vault { max-width: 720px; margin-inline: auto; font-size: 1.05rem; color: var(--gbk-muted-text); }
+.gbk-final__question { margin: 2rem auto 2.25rem; font-family: var(--gbk-font-display); font-weight: 600; font-size: clamp(1.75rem, 1.3rem + 1.7vw, 2.45rem); line-height: 1.15; }
+
+.gbk-ps-wrap { padding-bottom: clamp(4.75rem, 8vw, 7rem); }
+.gbk-ps { position: relative; background: var(--gbk-card-bg); border: 1px solid var(--gbk-border-light); border-radius: var(--gbk-radius-lg); box-shadow: var(--gbk-shadow-md); padding: clamp(2rem, 5vw, 3.25rem); }
+.gbk-ps > * + * { margin-top: 1rem; }
+.gbk-ps__lead { font-size: 1.2rem; font-weight: 700; line-height: 1.45; }
+.gbk-ps__tag { display: block; margin-bottom: 0.5rem; font-family: var(--gbk-font-display); font-style: italic; font-weight: 600; font-size: 3.1rem; line-height: 1; color: var(--gbk-primary); }
+.gbk-ps .gbk-checks { margin-block: 1.25rem 1.5rem; }
+.gbk-ps__total { font-size: 1.125rem; }
+.gbk-ps .gbk-btn { margin-top: 1.75rem; }
+
+/* ---------------------------------------------------------------------
+   16. MOTION
+   Content is only hidden once the script below is running, so it can never
+   get stuck invisible (e.g. inside the Squarespace editor, where scripts are off).
+--------------------------------------------------------------------- */
+.gbk-motion .gbk-reveal {
+  opacity: 0;
+  translate: 0 24px;
+  transition: opacity 0.9s var(--gbk-ease) var(--gbk-d, 0s), translate 0.9s var(--gbk-ease) var(--gbk-d, 0s);
+}
+.gbk-motion .gbk-reveal.is-in { opacity: 1; translate: 0 0; }
+@media (min-width: 700px) {
+  .gbk-features > :nth-child(3n + 2), .gbk-pipeline > :nth-child(4n + 2), .gbk-fit > :nth-child(2) { --gbk-d: 0.1s; }
+  .gbk-features > :nth-child(3n + 3), .gbk-pipeline > :nth-child(4n + 3) { --gbk-d: 0.2s; }
+  .gbk-pipeline > :nth-child(4n + 4) { --gbk-d: 0.3s; }
+}
+@media (hover: hover) {
+  .gbk-feature, .gbk-step { transition: transform 0.45s var(--gbk-ease), box-shadow 0.45s var(--gbk-ease), border-color 0.3s ease; }
+  .gbk-motion .gbk-reveal.gbk-feature, .gbk-motion .gbk-reveal.gbk-step {
+    transition: opacity 0.9s var(--gbk-ease) var(--gbk-d, 0s), translate 0.9s var(--gbk-ease) var(--gbk-d, 0s), transform 0.45s var(--gbk-ease), box-shadow 0.45s var(--gbk-ease), border-color 0.3s ease;
+  }
+  .gbk-feature:hover, .gbk-step:hover { transform: translateY(-4px); box-shadow: var(--gbk-shadow-md); border-color: var(--gbk-primary-line); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gbk-motion .gbk-reveal { opacity: 1; translate: none; transition: none; }
+  .gbk-seal__ring { animation: none; }
+  .gbk-wrapper .gbk-btn, .gbk-wrapper .gbk-btn .gbk-icon, .gbk-feature, .gbk-step { transition: none; }
+}
+
+/* ---------------------------------------------------------------------
+   17. SMALL SCREENS
+--------------------------------------------------------------------- */
+@media (max-width: 599px) {
+  .gbk-wrapper .gbk-btn, .gbk-wrapper .gbk-btn--lg, .gbk-wrapper .gbk-btn--xl { padding: 1.25rem 1.5rem; font-size: 0.9rem; letter-spacing: 0.1em; }
+  .gbk-receipt li { font-size: 0.95rem; }
+  .gbk-compare { font-size: 0.86rem; }
+  .gbk-compare thead th { font-size: 0.62rem; letter-spacing: 0.14em; }
+  .gbk-video__watch { align-items: flex-start; text-align: left; }
+  .gbk-hero__cta .gbk-btn { width: 100%; max-width: 22rem; }
+}
+@media (min-width: 360px) and (max-width: 599px) {
+  .gbk-wrapper .gbk-btn { white-space: nowrap; }
+}
+</style>
+
+<div class="gbk-wrapper">
+<script>
+  /* Hide reveal elements only when the page script can run; show everything after 2.5s if it can't. */
+  (function (w) {
+    if (!w || !("IntersectionObserver" in window)) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    w.classList.add("gbk-motion");
+    setTimeout(function () { if (!w.hasAttribute("data-gbk-ready")) w.classList.remove("gbk-motion"); }, 2500);
+  })(document.currentScript && document.currentScript.parentNode);
+</script>
+
+  <!-- Icon set (used below via <use>) -->
+  <svg class="gbk-sprite" aria-hidden="true" focusable="false">
+    <symbol id="gbk-i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="gbk-i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="gbk-i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="gbk-i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="gbk-i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8.5 5.5 3.5-5.5 3.5z"/></symbol>
+    <symbol id="gbk-i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="gbk-i-bolt" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    <symbol id="gbk-i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+    <symbol id="gbk-i-magnet" viewBox="0 0 24 24"><path d="m6 15-4-4 6.75-6.77a7.79 7.79 0 0 1 11 11L13 22l-4-4 6.39-6.36a2.14 2.14 0 0 0-3-3L6 15"/><path d="m5 8 4 4M12 15l4 4"/></symbol>
+    <symbol id="gbk-i-layout" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><rect width="8" height="4" x="8" y="7" rx="1"/><rect width="8" height="4" x="8" y="13" rx="1"/></symbol>
+    <symbol id="gbk-i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="gbk-i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="gbk-i-vault" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+  </svg>
+
+  <!-- =================================================================
+       1. HERO + VIDEO
+  ================================================================== -->
+  <section class="gbk-hero" aria-labelledby="gbk-hero-title">
+    <div class="gbk-container gbk-container--mid">
+      <p class="gbk-eyebrow gbk-reveal">The Get Booked Kit</p>
+      <h1 id="gbk-hero-title" class="gbk-display gbk-reveal" style="--gbk-d: 0.08s;">
+        You’ve Got the Stages.
+        <em class="gbk-accent">Now Make Them Pay You.</em>
+      </h1>
+      <p class="gbk-lede gbk-hero__lede gbk-reveal" style="--gbk-d: 0.16s;">The missing system that turns your speaking gigs into a pipeline of paying clients.</p>
+    </div>
+
+    <div class="gbk-container gbk-reveal" style="--gbk-d: 0.24s;">
+      <div class="gbk-video">
+        <div class="gbk-video__frame">
+          <iframe src="https://player.vimeo.com/video/1172128927?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=eda18a" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="The Get Booked Kit video"></iframe>
+        </div>
+      </div>
+      <div class="gbk-video__caption">
+        <p class="gbk-video__watch"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-play"/></svg>Watch this 5-minute video to see the system that turns every stage into clients.</p>
+        <p class="gbk-video__read"><a class="gbk-textlink" href="#gbk-letter">Prefer to read? Keep scrolling for the full breakdown.<svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-down"/></svg></a></p>
+      </div>
+    </div>
+
+    <div class="gbk-container gbk-container--mid gbk-reveal">
+      <div class="gbk-hero__cta">
+        <p class="gbk-hero__ask">Ready to stop leaving money on stages?</p>
+        <a href="https://otova.myflodesk.com/getbookedkit" class="gbk-btn gbk-btn--lg">GET THE KIT<svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-arrow"/></svg></a>
+        <p class="gbk-assure"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-shield"/></svg><span>If it doesn’t deliver, I’ll refund you. No questions asked, just email me within 30 days.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       2. THE LETTER + THE PROBLEM
+  ================================================================== -->
+  <section id="gbk-letter" class="gbk-section gbk-section--alt">
+    <div class="gbk-container">
+      <article class="gbk-paper gbk-reveal">
+        <div class="gbk-prose">
+          <p class="gbk-opening">If you’re reading this, you probably already know you’re good at what you do.</p>
+          <p>You’ve got the credentials. You’ve got the expertise. Maybe you’ve even been on a few stages.</p>
+          <p><strong>But for some reason, speaking isn’t turning into clients the way it should.</strong></p>
+          <p>You show up. You deliver. The audience is nodding along, taking notes, coming up to you afterward saying “that was amazing.”</p>
+          <p class="gbk-beat">And then… nothing.</p>
+          <p>No leads. No inquiries. No clients.</p>
+          <p>Just a nice memory and a LinkedIn connection request you’ll forget about by next week.</p>
+          <p>If that sounds familiar, keep reading. I built something specifically for this problem.</p>
+
+          <div class="gbk-ornament" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c.8 6.4 5.6 11.2 12 12-6.4.8-11.2 5.6-12 12-.8-6.4-5.6-11.2-12-12C6.4 11.2 11.2 6.4 12 0z"/></svg></div>
+
+          <h2 class="gbk-h2">The Applause Fades. Then What?</h2>
+          <p>Here’s what I see all the time:</p>
+          <p>You’re getting booked on stages. Or you could be. You have the credentials, the expertise, the story.</p>
+          <p><strong>But speaking isn’t turning into clients.</strong></p>
+          <p>You give a talk. You get a standing ovation. People tell you how much you inspired them.</p>
+          <p>And then they forget about you before you reach your car.</p>
+          <p>You’re the best-kept secret in your industry. Everyone who works with you gets results. But not enough people know you exist.</p>
+          <p>So you keep speaking for free, hoping the phone will ring. Hoping someone in that audience will reach out. Hoping visibility will eventually turn into revenue.</p>
+          <p class="gbk-pull"><span class="gbk-mark">But hope isn’t a strategy.</span></p>
+
+          <aside class="gbk-math">
+            <h3 class="gbk-h3">Here’s the math that explains why speaking alone doesn’t work:</h3>
+            <p>One talk gives you <strong>45 minutes</strong> on <strong>1 platform</strong>.</p>
+            <p>But research shows it takes <strong>7 hours of exposure</strong>, <strong>11 interactions</strong>, and <strong>4 platforms</strong> before someone trusts you enough to buy.</p>
+            <p>That means a single speaking gig leaves you <strong>6+ hours and 10+ touchpoints short</strong> of building real trust.</p>
+          </aside>
+
+          <div class="gbk-tableblock">
+            <h3 class="gbk-h2">Here’s What You’re Actually Leaving on the Table</h3>
+            <p>Most speakers don’t do this math. And it’s the exact reason why they’re able to consistently speak on stages but don’t have a system to turn applause into paying clients.</p>
+            <p class="gbk-tableblock__kicker">Same stage. Same audience. Completely different outcome.</p>
+            <table class="gbk-compare">
+              <thead>
+                <tr><th scope="col">Without a System</th><th scope="col">With a System</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="gbk-num">100</span> people hear you speak</td><td><span class="gbk-num">100</span> people hear you speak</td></tr>
+                <tr><td><span class="gbk-num">0</span> emails captured</td><td><span class="gbk-num">50</span> emails captured</td></tr>
+                <tr><td><span class="gbk-num">0</span> calls booked</td><td><span class="gbk-num">5</span> calls booked</td></tr>
+                <tr><td><span class="gbk-num">0</span> clients signed</td><td><span class="gbk-num">2</span> clients signed</td></tr>
+                <tr class="gbk-compare__stage"><td><span class="gbk-num">$0</span> per stage</td><td><span class="gbk-num">$20,000</span> per stage</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td><span class="gbk-total">$0<wbr>/year</span></td><td><span class="gbk-total">$200,000<wbr>/year</span></td></tr>
+              </tfoot>
+            </table>
+            <p class="gbk-footnote">Based on 10 stages per year with a $10,000 offer.</p>
+          </div>
+
+          <!-- Client edit: "A standing ovation…" sits directly under "never see again"; the section now ends on the kit line (no button). -->
+          <div class="gbk-close">
+            <p class="gbk-close__lead"><strong>Every stage you speak on without a capture system in place is money you will literally never see again.</strong></p>
+            <p>A standing ovation doesn’t close that gap.</p>
+            <p>That’s why the applause fades. That’s why audiences don’t convert. That’s why you feel like you’re doing everything right but still not seeing results.</p>
+            <p>It’s not you. It’s the system. Or the lack of one.</p>
+            <p class="gbk-close__final">The Get Booked Kit gives you that system.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       3. THE SOLUTION: THE PROFIT PIPELINE
+  ================================================================== -->
+  <section class="gbk-section gbk-solution" aria-labelledby="gbk-solution-title">
+    <div class="gbk-container gbk-container--text">
+      <h2 id="gbk-solution-title" class="gbk-h2 gbk-reveal">
+        The Speakers Who Convert Aren’t Doing More.
+        <em class="gbk-accent">They’re Doing It Differently.</em>
+      </h2>
+      <div class="gbk-prose gbk-reveal">
+        <p>The difference between speakers who get applause and speakers who get clients?</p>
+        <p class="gbk-beat gbk-beat--xl"><span class="gbk-mark">A system.</span></p>
+        <p>Not more stages. Not better content. Not a bigger audience.</p>
+        <p>A system that captures attention, nurtures relationships, and turns visibility into revenue.</p>
+        <p><strong>I call it The Profit Pipeline.</strong></p>
+      </div>
+    </div>
+
+    <div class="gbk-container">
+      <p class="gbk-steps-label gbk-reveal">It has four steps:</p>
+      <ol class="gbk-pipeline">
+        <li class="gbk-step gbk-reveal">
+          <span class="gbk-step__num" aria-hidden="true">1</span>
+          <h3 class="gbk-step__title">Research opportunities</h3>
+          <p>Find stages where your ideal clients are actually in the room</p>
+        </li>
+        <li class="gbk-step gbk-reveal">
+          <span class="gbk-step__num" aria-hidden="true">2</span>
+          <h3 class="gbk-step__title">Reach your audience</h3>
+          <p>Capture their contact information before you leave the stage</p>
+        </li>
+        <li class="gbk-step gbk-reveal">
+          <span class="gbk-step__num" aria-hidden="true">3</span>
+          <h3 class="gbk-step__title">Build the relationship</h3>
+          <p>Nurture them with valuable content until they’re ready to buy</p>
+        </li>
+        <li class="gbk-step gbk-reveal">
+          <span class="gbk-step__num" aria-hidden="true">4</span>
+          <h3 class="gbk-step__title">Generate revenue</h3>
+          <p>Turn subscribers into clients, referrals, and future speaking invitations</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="gbk-container gbk-container--text">
+      <div class="gbk-prose gbk-reveal">
+        <p>That’s it. <strong>Research. Reach. Relationship. Revenue.</strong></p>
+        <p>The speakers who convert aren’t working harder than you. They just have this system in place.</p>
+        <p><strong>The Get Booked Kit gives you everything you need to build it.</strong></p>
+      </div>
+      <div class="gbk-cta-row gbk-reveal">
+        <a href="https://otova.myflodesk.com/getbookedkit" class="gbk-btn gbk-btn--lg">GET THE KIT NOW<svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       4. WHAT'S INSIDE
+  ================================================================== -->
+  <section class="gbk-section gbk-section--alt" aria-labelledby="gbk-inside-title">
+    <div class="gbk-container">
+      <header class="gbk-head gbk-reveal">
+        <h2 id="gbk-inside-title" class="gbk-h2">Everything You Need to Turn Speaking Into Clients</h2>
+        <p class="gbk-lede">When you get The Get Booked Kit, you’re not getting another course to watch. You’re getting a complete toolkit, templates, guides, and resources you can implement this week.</p>
+        <p class="gbk-inside-label">Here’s what’s inside:</p>
+      </header>
+
+      <div class="gbk-features">
+        <article class="gbk-feature gbk-reveal">
+          <div class="gbk-feature__top">
+            <span class="gbk-feature__icon"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-doc"/></svg></span>
+            <span class="gbk-feature__index" aria-hidden="true">01</span>
+          </div>
+          <h3 class="gbk-feature__title">Speaker One-Sheet Guide</h3>
+          <p>Your one-sheet is often the first thing an event organizer sees. This guide shows you exactly what to include so they take you seriously and actually respond to your pitch.</p>
+          <p>You’ll know what to put on it, what to leave off, and how to position yourself as the obvious choice.</p>
+        </article>
+        <article class="gbk-feature gbk-reveal">
+          <div class="gbk-feature__top">
+            <span class="gbk-feature__icon"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-magnet"/></svg></span>
+            <span class="gbk-feature__index" aria-hidden="true">02</span>
+          </div>
+          <h3 class="gbk-feature__title">Lead Magnet Formula</h3>
+          <p>Most speakers don’t capture leads from stage. And the ones who do? Their lead magnets don’t convert.</p>
+          <p>This formula shows you how to name and build a resource that your audience actually wants, one that captures their attention AND their contact info.</p>
+          <p>No more QR codes that no one scans. No more freebies that collect dust.</p>
+        </article>
+        <article class="gbk-feature gbk-reveal">
+          <div class="gbk-feature__top">
+            <span class="gbk-feature__icon"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-layout"/></svg></span>
+            <span class="gbk-feature__index" aria-hidden="true">03</span>
+          </div>
+          <h3 class="gbk-feature__title">Landing Page Template</h3>
+          <p>Your landing page is where leads become subscribers. This template gives you the exact structure that converts at 50%, the same one I use for my own business.</p>
+          <p>Just fill in the blanks and launch.</p>
+        </article>
+        <article class="gbk-feature gbk-reveal">
+          <div class="gbk-feature__top">
+            <span class="gbk-feature__icon"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-mail"/></svg></span>
+            <span class="gbk-feature__index" aria-hidden="true">04</span>
+          </div>
+          <h3 class="gbk-feature__title">5 Welcome Emails</h3>
+          <p>What happens after someone joins your list? If the answer is “nothing,” you’re losing them.</p>
+          <p>These 5 email templates nurture every new subscriber automatically. They build trust, deliver value, and position your offer, without you writing a single word from scratch.</p>
+        </article>
+        <article class="gbk-feature gbk-reveal">
+          <div class="gbk-feature__top">
+            <span class="gbk-feature__icon"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-send"/></svg></span>
+            <span class="gbk-feature__index" aria-hidden="true">05</span>
+          </div>
+          <h3 class="gbk-feature__title">Pitch Email Templates</h3>
+          <p>Knowing what to say when you reach out to event organizers is half the battle. These templates give you the exact words to use, so you can pitch with confidence and actually get responses.</p>
+          <p>No more staring at a blank email wondering what to write.</p>
+        </article>
+        <article class="gbk-feature gbk-reveal">
+          <div class="gbk-feature__top">
+            <span class="gbk-feature__icon"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-vault"/></svg></span>
+            <span class="gbk-feature__index" aria-hidden="true">06</span>
+          </div>
+          <h3 class="gbk-feature__title">The Speaker’s Vault</h3>
+          <p>100+ vetted speaking opportunities across industries, conferences, podcasts, summits, panels, updated regularly.</p>
+          <p>No more Googling “call for speakers” and hoping for the best. The research is done for you.</p>
+        </article>
+      </div>
+
+      <div class="gbk-cta-row gbk-reveal">
+        <a href="https://otova.myflodesk.com/getbookedkit" class="gbk-btn gbk-btn--lg">GET INSTANT ACCESS<svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       5. THE OFFER / VALUE STACK
+  ================================================================== -->
+  <section class="gbk-section" aria-labelledby="gbk-offer-title">
+    <div class="gbk-container">
+      <div class="gbk-offer gbk-reveal">
+        <h2 id="gbk-offer-title" class="gbk-h2">Here’s What You’re Getting</h2>
+        <ul class="gbk-receipt">
+          <li><span class="gbk-receipt__item"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg>Speaker One-Sheet Guide</span><span class="gbk-receipt__leader" aria-hidden="true"></span><span class="gbk-receipt__price">$97</span></li>
+          <li><span class="gbk-receipt__item"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg>Lead Magnet Formula</span><span class="gbk-receipt__leader" aria-hidden="true"></span><span class="gbk-receipt__price">$147</span></li>
+          <li><span class="gbk-receipt__item"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg>Landing Page Template</span><span class="gbk-receipt__leader" aria-hidden="true"></span><span class="gbk-receipt__price">$297</span></li>
+          <li><span class="gbk-receipt__item"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg>5 Welcome Sequence Templates</span><span class="gbk-receipt__leader" aria-hidden="true"></span><span class="gbk-receipt__price">$297</span></li>
+          <li><span class="gbk-receipt__item"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg>Pitch Email Templates</span><span class="gbk-receipt__leader" aria-hidden="true"></span><span class="gbk-receipt__price">$147</span></li>
+          <li><span class="gbk-receipt__item"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg>Speaker’s Vault Access</span><span class="gbk-receipt__leader" aria-hidden="true"></span><span class="gbk-receipt__price">$197</span></li>
+        </ul>
+
+        <div class="gbk-offer__total">
+          <p class="gbk-offer__value">Total Value: <s>$1,200</s></p>
+          <p class="gbk-offer__price"><span>Yours for just</span> <strong class="gbk-price">$297</strong></p>
+          <div class="gbk-offer__notes">
+            <p>You could hire someone to build all of this for you. It would cost thousands and take weeks.</p>
+            <p>Or you could grab the kit, follow the guides, and have your system built by this time next week.</p>
+          </div>
+        </div>
+
+        <a href="https://otova.myflodesk.com/getbookedkit" class="gbk-btn gbk-btn--lg gbk-btn--block">GET INSTANT ACCESS<svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-arrow"/></svg></a>
+        <p class="gbk-offer__trust">
+          <span><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-bolt"/></svg>Instant access</span>
+          <span><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-shield"/></svg>30-day money-back guarantee</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       6. HOW IT WORKS
+  ================================================================== -->
+  <section class="gbk-section gbk-section--alt" aria-labelledby="gbk-how-title">
+    <div class="gbk-container gbk-container--mid">
+      <div class="gbk-how">
+        <header class="gbk-how__head gbk-reveal">
+          <h2 id="gbk-how-title" class="gbk-h2">From Download to Pitch in One Week</h2>
+          <p class="gbk-lede">This isn’t a course you need to “find time” for. It’s a toolkit you can implement immediately.</p>
+        </header>
+        <ol class="gbk-timeline">
+          <li class="gbk-tstep gbk-reveal">
+            <span class="gbk-tstep__num" aria-hidden="true">1</span>
+            <div class="gbk-tstep__card">
+              <h3 class="gbk-tstep__title">Download the kit.</h3>
+              <p>You’ll get instant access to everything, no waiting, no drip schedule, no hoops to jump through.</p>
+            </div>
+          </li>
+          <li class="gbk-tstep gbk-reveal">
+            <span class="gbk-tstep__num" aria-hidden="true">2</span>
+            <div class="gbk-tstep__card">
+              <h3 class="gbk-tstep__title">Build your assets.</h3>
+              <p>Follow the guides to create your speaker one-sheet, lead magnet, and landing page. The templates make it simple.</p>
+            </div>
+          </li>
+          <li class="gbk-tstep gbk-reveal">
+            <span class="gbk-tstep__num" aria-hidden="true">3</span>
+            <div class="gbk-tstep__card">
+              <h3 class="gbk-tstep__title">Pitch opportunities.</h3>
+              <p>Open The Speaker’s Vault, find events that align with your expertise, and use the pitch templates to reach out.</p>
+            </div>
+          </li>
+          <li class="gbk-tstep gbk-reveal">
+            <span class="gbk-tstep__num" aria-hidden="true">4</span>
+            <div class="gbk-tstep__card">
+              <h3 class="gbk-tstep__title">Capture and nurture.</h3>
+              <p>When you get booked, use your QR code on stage. Your welcome sequence does the rest while you sleep.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="gbk-how__outro gbk-reveal">
+        <p class="gbk-pull"><span class="gbk-mark">Research. Reach. Relationship. Revenue.</span></p>
+        <p>That’s the Profit Pipeline. And now you have everything you need to build it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       7. WHO THIS IS FOR / NOT FOR
+  ================================================================== -->
+  <section class="gbk-section" aria-labelledby="gbk-fit-title">
+    <div class="gbk-container">
+      <header class="gbk-head gbk-reveal">
+        <p class="gbk-eyebrow">The Ideal Fit</p>
+        <h2 id="gbk-fit-title" class="gbk-h2">Who This Kit Is Built For</h2>
+      </header>
+
+      <div class="gbk-fit">
+        <div class="gbk-fit__card gbk-fit__card--yes gbk-reveal">
+          <h3 class="gbk-fit__title"><span class="gbk-fit__badge"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg></span>This Is For You If…</h3>
+          <ul class="gbk-fit__list">
+            <li><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg><span>You’re a speaker, coach, consultant, author, or expert with real credentials and proven results.</span></li>
+            <li><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg><span>You’re getting booked on stages but audiences aren’t turning into clients.</span></li>
+            <li><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg><span>You want speaking to grow your business, not just pad your resume.</span></li>
+            <li><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg><span>You’re tired of being the best-kept secret in your industry.</span></li>
+            <li><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg><span>You’re ready to build a system that works, not just collect another resource.</span></li>
+          </ul>
+          <div class="gbk-fit__callout">
+            <p>This is for speakers with substance behind the stage.</p>
+            <p>You already have something worth talking about. You have a business. You have an offer that transforms lives.</p>
+            <p class="gbk-fit__callout-kicker">You just need a system that turns visibility into clients.</p>
+          </div>
+        </div>
+
+        <div class="gbk-fit__card gbk-fit__card--no gbk-reveal">
+          <h3 class="gbk-fit__title"><span class="gbk-fit__badge"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-x"/></svg></span>This Is NOT For You If…</h3>
+          <ul class="gbk-fit__list">
+            <li><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-x"/></svg><span>You want speaking to BE your business, chasing speaker fees without an offer to sell.</span></li>
+            <li><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-x"/></svg><span>You’re not willing to do the work to build your assets. This is a toolkit, not a magic wand.</span></li>
+            <li><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-x"/></svg><span>You just want to collect resources without implementing. If it’s going to sit in your downloads folder, save your $297.</span></li>
+            <li><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-x"/></svg><span>You’re brand new to speaking with no credentials or expertise yet. Start with The Speaker’s Vault (it’s free) and come back when you’re ready.</span></li>
+          </ul>
+          <p class="gbk-fit__footer">This kit is for speakers who are ready to build. If that’s you, keep reading.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       8. PROOF
+  ================================================================== -->
+  <section class="gbk-section gbk-section--alt" aria-labelledby="gbk-proof-title">
+    <div class="gbk-container">
+      <header class="gbk-head gbk-reveal">
+        <h2 id="gbk-proof-title" class="gbk-h2">This Isn’t Theory. It’s What’s Working Right Now.</h2>
+        <p class="gbk-lede">I don’t teach concepts I read about in a book. I teach what I do every single day, for myself and for my clients.</p>
+      </header>
+
+      <div class="gbk-measure">
+        <p class="gbk-kicker gbk-reveal">Here’s what this system has done:</p>
+        <figure class="gbk-quote gbk-reveal">
+          <span class="gbk-quote__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.6 5C6 6.6 3.5 9.7 3.5 13.9c0 3 1.7 5.1 4.2 5.1 2.1 0 3.6-1.5 3.6-3.5s-1.4-3.4-3.3-3.4c-.4 0-.8.1-1 .2.4-2.2 2.2-4.3 4.4-5.5L9.6 5zm10.2 0c-3.6 1.6-6.1 4.7-6.1 8.9 0 3 1.7 5.1 4.2 5.1 2.1 0 3.6-1.5 3.6-3.5s-1.4-3.4-3.3-3.4c-.4 0-.8.1-1 .2.4-2.2 2.2-4.3 4.4-5.5L19.8 5z"/></svg></span>
+          <blockquote><p>One of my clients came to me with one free conference acceptance. 90 days later? Paid keynote. Inbound requests from event organizers. A full pipeline of opportunities. She didn’t become a better speaker. She built a better system.</p></blockquote>
+        </figure>
+
+        <div class="gbk-prose gbk-reveal">
+          <p>Here’s what it’s done for me:</p>
+          <p>My own landing page, the one you’re going to replicate with the template in this kit, <span class="gbk-mark">converts at 50%</span>. That means half of everyone who visits becomes a subscriber.</p>
+          <p>That’s not luck. That’s the system.</p>
+          <p>Here’s why I know it works:</p>
+          <p>I run a visibility agency where my team and I do this every single day for our clients. We research opportunities, write pitches, design lead magnets, create landing pages, and write email sequences.</p>
+          <p>This kit is the DIY version of what we do at a done-for-you level.</p>
+          <p><strong>It’s not theory. It’s what’s working right now.</strong></p>
+        </div>
+
+        <div class="gbk-cta-row gbk-reveal">
+          <a href="https://otova.myflodesk.com/getbookedkit" class="gbk-btn gbk-btn--lg">GET THE KIT NOW<svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       9. FAQ
+  ================================================================== -->
+  <section class="gbk-section" aria-labelledby="gbk-faq-title">
+    <div class="gbk-container">
+      <header class="gbk-head gbk-reveal">
+        <h2 id="gbk-faq-title" class="gbk-h2">Questions You Might Have</h2>
+      </header>
+
+      <div class="gbk-faq gbk-reveal">
+        <details class="gbk-faq__item" name="gbk-faq">
+          <summary class="gbk-faq__q"><span>I’ve never spoken before. Is this for me?</span><span class="gbk-faq__icon" aria-hidden="true"></span></summary>
+          <div class="gbk-faq__a">
+            <p>This kit is for speakers who are already getting booked (or have the credentials to be) but aren’t converting those audiences into clients. If you’re brand new and still figuring out your message, start with The Speaker’s Vault. It’s free. Come back to the kit when you’re ready to build your system.</p>
+          </div>
+        </details>
+        <details class="gbk-faq__item" name="gbk-faq">
+          <summary class="gbk-faq__q"><span>How is this different from other speaker trainings?</span><span class="gbk-faq__icon" aria-hidden="true"></span></summary>
+          <div class="gbk-faq__a">
+            <p>Most speaker trainings teach you how to speak better: delivery, storytelling, stage presence.</p>
+            <p>This isn’t that.</p>
+            <p>The Get Booked Kit teaches you how to turn speaking into clients. It’s not about being a better speaker. It’s about building a system that converts. Different problem, different solution.</p>
+          </div>
+        </details>
+        <details class="gbk-faq__item" name="gbk-faq">
+          <summary class="gbk-faq__q"><span>How quickly can I implement this?</span><span class="gbk-faq__icon" aria-hidden="true"></span></summary>
+          <div class="gbk-faq__a">
+            <p>If you block out a few hours this week, you could have your one-sheet and lead magnet done. Your landing page could be live by the weekend. Your first pitch could go out on Monday. This isn’t a 12-week course. It’s a toolkit you can use immediately.</p>
+          </div>
+        </details>
+        <details class="gbk-faq__item" name="gbk-faq">
+          <summary class="gbk-faq__q"><span>What if I already have a one-sheet?</span><span class="gbk-faq__icon" aria-hidden="true"></span></summary>
+          <div class="gbk-faq__a">
+            <p>Great. Use the guide to audit it and make sure it’s optimized. Most one-sheets I see are missing key elements that event organizers actually look for.</p>
+            <p>And even if your one-sheet is perfect, the kit includes everything else you need: lead magnet formula, landing page template, email sequences, pitch templates, and Vault access.</p>
+          </div>
+        </details>
+        <details class="gbk-faq__item" name="gbk-faq">
+          <summary class="gbk-faq__q"><span>Is this a course?</span><span class="gbk-faq__icon" aria-hidden="true"></span></summary>
+          <div class="gbk-faq__a">
+            <p>No. There are no long videos to watch. No modules to complete. No certificates at the end. It’s a toolkit, templates, guides, and resources you can implement immediately. Download it, use it, build your system.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       10. OBJECTION + GUARANTEE
+  ================================================================== -->
+  <section class="gbk-section gbk-section--alt" aria-labelledby="gbk-guarantee-title">
+    <div class="gbk-container gbk-container--mid">
+      <div class="gbk-objection gbk-reveal">
+        <h2 class="gbk-h2">I Know What You’re Thinking…</h2>
+        <p class="gbk-objection__quote">“$297 sounds too good to be true for everything you’re getting.”</p>
+        <p>I get it. You’ve probably bought $1,000 courses that gave you less than this.</p>
+        <p>So let me be clear: <strong>There’s no catch.</strong></p>
+        <p class="gbk-muted">No upsell required to make it work. No “you need the $997 version for the real stuff.” No monthly subscription that quietly charges your card.</p>
+        <p class="gbk-muted">Just the toolkit, the templates, and The Vault, yours forever.</p>
+        <p class="gbk-muted">I priced it at $297 because I want it to be accessible for speakers who are ready to build their system. If you implement even one piece of this kit, it’ll pay for itself many times over.</p>
+      </div>
+
+      <div class="gbk-guarantee gbk-reveal">
+        <svg class="gbk-seal" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+          <circle class="gbk-seal__bg" cx="60" cy="60" r="60"/>
+          <circle class="gbk-seal__inner" cx="60" cy="60" r="38"/>
+          <g class="gbk-seal__ring">
+            <path id="gbk-seal-path" d="M 60,60 m -47,0 a 47,47 0 1,1 94,0 a 47,47 0 1,1 -94,0" fill="none"/>
+            <text class="gbk-seal__text"><textPath href="#gbk-seal-path" textLength="293" lengthAdjust="spacing">MONEY-BACK GUARANTEE ✦ MONEY-BACK GUARANTEE ✦</textPath></text>
+          </g>
+          <text class="gbk-seal__num" x="60" y="67" text-anchor="middle">30</text>
+          <text class="gbk-seal__days" x="61" y="80" text-anchor="middle">DAYS</text>
+        </svg>
+        <h2 id="gbk-guarantee-title" class="gbk-h2">30-Day Money-Back Guarantee</h2>
+        <p class="gbk-guarantee__body">I’m confident this kit will help you, but I also know you’ve been burned before. So here’s my promise: If you go through the kit, do the work, and don’t feel like it was worth every penny, email me within 30 days and I’ll refund you. No questions asked. No awkward conversation. No hoops. <strong>You either love it or you get your money back.</strong></p>
+        <p class="gbk-guarantee__kicker">There’s no risk in trying.</p>
+        <a href="https://otova.myflodesk.com/getbookedkit" class="gbk-btn gbk-btn--lg">GET THE KIT NOW<svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       11. FINAL CTA
+  ================================================================== -->
+  <section class="gbk-section gbk-final" aria-labelledby="gbk-final-title">
+    <div class="gbk-container gbk-container--mid">
+      <h2 id="gbk-final-title" class="gbk-display gbk-reveal">
+        The System Is Here.
+        <em class="gbk-accent">Are You Ready to Use It?</em>
+      </h2>
+
+      <div class="gbk-final__belief gbk-reveal">
+        <p class="gbk-muted">Let me remind you of the one belief that changes everything:</p>
+        <p class="gbk-final__statement">If you have a system for finding opportunities, capturing leads, and staying top of mind, you can turn speaking into clients, not just applause.</p>
+      </div>
+
+      <div class="gbk-final__lines gbk-reveal">
+        <p>The speakers who convert aren’t doing more than you. They just have a system.</p>
+        <p><strong>Now you can too.</strong></p>
+      </div>
+
+      <div class="gbk-checkcard gbk-reveal">
+        <p class="gbk-checkcard__title">By this time next week, you could have:</p>
+        <ul class="gbk-checks">
+          <li><span class="gbk-tick"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg></span><span>Your speaker one-sheet done and ready to send</span></li>
+          <li><span class="gbk-tick"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg></span><span>Your lead magnet named and built</span></li>
+          <li><span class="gbk-tick"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg></span><span>Your landing page live and converting</span></li>
+          <li><span class="gbk-tick"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg></span><span>Your first pitch sent to an event organizer</span></li>
+        </ul>
+      </div>
+
+      <div class="gbk-reveal">
+        <p class="gbk-final__vault">The opportunities in The Speakers’ Vault are being updated regularly. The templates are ready to use. The guides are waiting for you.</p>
+        <p class="gbk-final__question">The only question is: are you ready to build?</p>
+        <a href="https://otova.myflodesk.com/getbookedkit" class="gbk-btn gbk-btn--xl">GET THE KIT NOW<svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       12. P.S.
+  ================================================================== -->
+  <section class="gbk-ps-wrap">
+    <div class="gbk-container gbk-container--text">
+      <aside class="gbk-ps gbk-reveal">
+        <p class="gbk-ps__lead"><span class="gbk-ps__tag">P.S.</span> If you scrolled straight to the bottom, here’s the deal:</p>
+        <p class="gbk-muted"><strong>The Get Booked Kit</strong> is a DIY toolkit that gives you everything you need to get booked on stages and turn those audiences into clients.</p>
+        <p class="gbk-muted">You get:</p>
+        <ul class="gbk-checks">
+          <li><span class="gbk-tick"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg></span><span>The Speaker One-Sheet Guide</span></li>
+          <li><span class="gbk-tick"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg></span><span>The Lead Magnet Formula</span></li>
+          <li><span class="gbk-tick"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg></span><span>The Landing Page Template (50% conversion rate)</span></li>
+          <li><span class="gbk-tick"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg></span><span>5 Welcome Sequence Email Templates</span></li>
+          <li><span class="gbk-tick"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg></span><span>Pitch Email Templates</span></li>
+          <li><span class="gbk-tick"><svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-check"/></svg></span><span>Access to The Speaker’s Vault (100+ opportunities)</span></li>
+        </ul>
+        <p class="gbk-ps__total"><strong>Total value: $1,200. Yours for $297.</strong></p>
+        <p class="gbk-muted">If it doesn’t deliver, I’ll refund you. No questions asked, just email me within 30 days.</p>
+        <p class="gbk-muted">The system is here. Click the button below to get instant access.</p>
+        <a href="https://otova.myflodesk.com/getbookedkit" class="gbk-btn gbk-btn--lg">GET INSTANT ACCESS<svg class="gbk-icon" aria-hidden="true" focusable="false"><use href="#gbk-i-arrow"/></svg></a>
+      </aside>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  (function () {
+    var reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+    document.querySelectorAll(".gbk-wrapper").forEach(function (wrapper) {
+      wrapper.setAttribute("data-gbk-ready", "");
+
+      /* 1. Scroll reveals: each block fades up once, as soon as any part of it is on screen */
+      if (wrapper.classList.contains("gbk-motion")) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-in");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: "0px 0px -6% 0px", threshold: 0 });
+        wrapper.querySelectorAll(".gbk-reveal").forEach(function (el) { observer.observe(el); });
+        window.addEventListener("beforeprint", function () {
+          wrapper.querySelectorAll(".gbk-reveal").forEach(function (el) { el.classList.add("is-in"); });
+        });
+      }
+
+      /* 2. FAQ: keep one answer open at a time */
+      wrapper.querySelectorAll(".gbk-faq").forEach(function (faq) {
+        var items = faq.querySelectorAll("details");
+        items.forEach(function (item) {
+          item.addEventListener("toggle", function () {
+            if (!item.open) return;
+            items.forEach(function (other) { if (other !== item) other.open = false; });
+          });
+        });
+      });
+
+      /* 3. "Prefer to read?" link: smooth scroll down to the letter */
+      wrapper.querySelectorAll('a[href^="#gbk-"]').forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          var target = document.getElementById(link.getAttribute("href").slice(1));
+          if (!target) return;
+          event.preventDefault();
+          target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+        });
+      });
+    });
+  })();
+</script>
