@@ -19,11 +19,13 @@ Open http://localhost:3000. Validate changes with `npm run lint` and `npm run bu
 - `src/components/kit/KitChecklist.tsx`: six setup steps, saved locally under `otova-kit-checklist-v1`. No account or server sync; storage failures fall back to in-memory progress.
 - `public/images/`: the three supplied photos. Next Image handles responsive sizing and optimized delivery without modifying the originals.
 
-## Add the new walkthrough
+## Walkthrough video
 
-The old sales video is intentionally removed. Until the new recording is ready, the walkthrough section shows a clearly labeled, non-interactive coming-soon placeholder.
+The walkthrough is a Vimeo embed. To swap it, change `WALKTHROUGH_EMBED_URL` in `src/components/VSLPlayer.tsx` to the new video's player URL (`https://player.vimeo.com/video/VIDEO_ID`), not the public watch URL. The player supports fullscreen and does not autoplay.
 
-Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_WALKTHROUGH_EMBED_URL` to the new video's HTTPS embed URL (for example, `https://player.vimeo.com/video/VIDEO_ID`). Add the same variable to the deployment environment and rebuild. Use the player/embed URL, not the public video watch URL. The player supports fullscreen and does not autoplay.
+## Colors
+
+The palette matches otovaagency.com: brown `#5c3325` for text, peach `#eda18a` for accents and primary buttons, and blush `#fff3f0` for the page background. The core tokens are at the top of `src/app/globals.css`.
 
 The setup checklist intentionally puts positioning and talk titles before opportunity research, matching the supplied walkthrough plan. Update those steps if the recording changes that order.
 

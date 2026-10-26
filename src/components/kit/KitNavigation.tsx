@@ -91,9 +91,6 @@ export function KitNavigation() {
         ))}
       </nav>
       <div className="sidebar-bottom">
-        <span className="sidebar-signature" aria-hidden="true">
-          o.
-        </span>
         <p>
           Big things start
           <br />

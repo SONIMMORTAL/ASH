@@ -185,9 +185,6 @@ export default function Home() {
         <main id="main-content">
           <section className="hero" id="welcome" aria-labelledby="hero-title">
             <div className="hero-copy">
-              <span className="eyebrow">
-                <span className="status-dot" /> WELCOME TO THE GET BOOKED KIT
-              </span>
               <h1 id="hero-title">
                 You Just Took Getting Booked <em>Into Your Own Hands.</em>
               </h1>
@@ -198,7 +195,7 @@ export default function Home() {
                 order.
               </p>
               <div className="hero-actions">
-                <a className="button button-dark" href="#walkthrough">
+                <a className="button button-primary" href="#walkthrough">
                   Let’s get you started <ArrowDown size={16} />
                 </a>
                 <a
@@ -275,11 +272,7 @@ export default function Home() {
                 <span>
                   Your kit walkthrough
                   <br />
-                  <small>
-                    {process.env.NEXT_PUBLIC_WALKTHROUGH_EMBED_URL
-                      ? "Press play, then make it yours."
-                      : "Your new walkthrough is coming soon."}
-                  </small>
+                  <small>Press play, then make it yours.</small>
                 </span>
               </div>
             </div>
@@ -468,9 +461,6 @@ export default function Home() {
                 </a>
               </article>
               <article className="support-card team-support">
-                <span className="support-monogram" aria-hidden="true">
-                  o.
-                </span>
                 <span className="eyebrow">YOUR VISION. OUR TEAM.</span>
                 <h3>
                   Want My Team
@@ -489,7 +479,7 @@ export default function Home() {
                   starting at <strong>$2,500 a month.</strong>
                 </blockquote>
                 <a
-                  className="button button-dark"
+                  className="button button-primary"
                   href="https://otovaagency.com/apply"
                   target="_blank"
                   rel="noopener noreferrer"
