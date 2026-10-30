@@ -634,6 +634,60 @@ h2 em {
   border: 0;
   display: block;
 }
+.video-placeholder {
+  min-height: 240px;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: #eddcd8;
+}
+.video-placeholder::before,
+.video-placeholder::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border: 1px solid #c5a09444;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.video-placeholder::before {
+  left: -200px;
+  bottom: -250px;
+  width: 500px;
+  height: 500px;
+}
+.video-placeholder::after {
+  top: -260px;
+  right: -180px;
+}
+.video-placeholder > svg {
+  color: #936556;
+  margin-bottom: 19px;
+}
+.video-placeholder h3 {
+  font: 26px var(--serif);
+  margin-bottom: 8px;
+}
+.video-placeholder p {
+  color: #8c6457;
+  font-size: 11px;
+  padding: 0 20px;
+  text-align: center;
+}
+.video-placeholder .coming-soon {
+  font-size: 8px;
+  letter-spacing: 1.6px;
+  margin-top: 22px;
+  padding: 6px 11px;
+  border: 1px solid #d1b0a6;
+  border-radius: 20px;
+  color: #895a4b;
+}
 .video-caption {
   display: flex;
   align-items: center;
@@ -1473,6 +1527,12 @@ h2 em {
   }
   .small-note {
     margin-top: 17px;
+  }
+  .video-placeholder {
+    min-height: 205px;
+  }
+  .video-placeholder h3 {
+    font-size: 24px;
   }
   .resources-section {
     padding-top: 40px;

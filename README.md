@@ -21,7 +21,7 @@ Open http://localhost:3000. Validate changes with `npm run lint` and `npm run bu
 
 ## Walkthrough video
 
-The walkthrough is a Vimeo embed. To swap it, change `WALKTHROUGH_EMBED_URL` in `src/components/VSLPlayer.tsx` to the new video's player URL (`https://player.vimeo.com/video/VIDEO_ID`), not the public watch URL. The player supports fullscreen and does not autoplay.
+Until the walkthrough is recorded, the section shows a coming-soon placeholder. To add it, set `WALKTHROUGH_EMBED_URL` in `src/components/VSLPlayer.tsx` to the video's Vimeo player URL (`https://player.vimeo.com/video/VIDEO_ID`), not the public watch URL. The player supports fullscreen and does not autoplay.
 
 ## Colors
 

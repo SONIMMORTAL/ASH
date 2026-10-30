@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { KitNavigation } from "@/components/kit/KitNavigation";
 import { KitChecklist } from "@/components/kit/KitChecklist";
-import { VSLPlayer } from "@/components/VSLPlayer";
+import { VSLPlayer, WALKTHROUGH_EMBED_URL } from "@/components/VSLPlayer";
 
 const steps = [
   {
@@ -148,7 +148,7 @@ function KitArtwork() {
             sizes="(max-width: 760px) 46vw, 22vw"
           />
           <span className="photo-tag" aria-hidden="true">
-            03 · SALONS & WORKSHOPS
+            03 · WORKSHOPS & TRAINING
           </span>
         </div>
       </div>
@@ -272,7 +272,11 @@ export default function Home() {
                 <span>
                   Your kit walkthrough
                   <br />
-                  <small>Press play, then make it yours.</small>
+                  <small>
+                    {WALKTHROUGH_EMBED_URL
+                      ? "Press play, then make it yours."
+                      : "Your new walkthrough is coming soon."}
+                  </small>
                 </span>
               </div>
             </div>
