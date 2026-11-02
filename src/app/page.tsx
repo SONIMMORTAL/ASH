@@ -169,10 +169,6 @@ export default function Home() {
       <KitNavigation />
       <div className="workspace">
         <header className="topbar">
-          <div className="topbar-left">
-            <span className="topbar-pill">CLIENT PORTAL</span>
-            <span>Your toolkit. Your next chapter.</span>
-          </div>
           <div className="topbar-actions">
             <a className="topbar-jump" href="#how-to">
               Setup checklist
