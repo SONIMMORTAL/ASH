@@ -1,0 +1,52 @@
+# OTOVA Brand Visibility Agency
+
+> OTOVA is a brand visibility agency in Brooklyn, NY, founded by Ashley Alleyne. It helps entrepreneurs who speak (coaches, consultants, authors and other experts) get booked on stages, podcasts and in organizations, and turn those audiences into paying clients. OTOVA offers done-for-you speaking placements and the Get Booked Kit, a $297 toolkit for running the same system yourself.
+
+- Website: https://otovaagency.com
+- Founder: Ashley Alleyne, a former school psychologist
+- Email: hey@otovaagency.com
+- Social: https://www.instagram.com/otovaagency, https://www.tiktok.com/@otovaagency, https://www.linkedin.com/in/otova
+
+## Get Booked Kit
+
+- [Get Booked Kit](https://otovaagency.com/resources): The system OTOVA's team uses to get its clients booked to speak consistently, packaged so you can run it yourself in about 2 hours a week. One-time price of $297, instant access, and a 30-day money-back guarantee. It includes monthly live office hours with Ashley (first Tuesday of every month, 2 to 3 PM ET) and every future kit update.
+- [Buy the Get Booked Kit](https://otova.myflodesk.com/getbookedkit): Checkout page for the kit.
+
+The kit is built on the Profit Pipeline, four steps OTOVA's team runs for its clients: Research Opportunities, Reach Your Audience, Build the Relationship and Generate Revenue. It contains eight Google Docs and Google Sheets that buyers copy into their own Drive:
+
+1. AI Speaking Opportunity Research Prompt: A copy-and-paste prompt that turns ChatGPT, Claude, or any AI tool with web search into a research assistant. The buyer fills in their topics, the formats they offer, and the people who can hire them. It returns opportunities in batches of 10, each with a source link to check before pitching. Running it once a month keeps a fresh list of opportunities that fit the buyer's work.
+2. The Speaker's Vault: A spreadsheet of 100+ vetted speaking opportunities across conferences, summits, associations, podcasts, and organizations that bring in speakers for workshops and trainings. Each one includes how to apply and the submission deadline, where applicable, so buyers can start pitching the week they get the kit. The Vault can also be uploaded into an AI tool so the research prompt skips opportunities already on the list.
+3. Speaking Opportunity Tracker: A Google Sheet modeled on the tracker OTOVA's team uses for its clients, with a tab for conferences, podcasts, and companies and organizations. Another tab counts opportunities, applications, proposals, and speaking bookings each month, so the buyer can see who is due for a follow-up and whether their numbers are moving.
+4. Speaker One-Sheet Guides: Three guides in one document, for conferences, workshops and trainings, and podcasts. Each one covers what that decision-maker looks for, with a checklist and the most common mistakes to avoid, so the one-page sheet matches the room being pitched.
+5. Pitch Email Templates: Templates for pitching organizations and podcasts, built from real pitches OTOVA's team sent on behalf of its clients. They start with how to research a contact before writing and end with the follow-up timing the team uses and how to draft faster with AI. They cover the first email, the follow-ups, and the reply when someone writes back.
+6. Conference Proposal Guide: A guide to applying for conferences. It shows how to read a call for proposals, and self-interview questions and AI prompts help build the proposal. It includes real examples from accepted proposals that show why each one worked. It also covers the proposal sent after a call, what to do after a no, and a checklist to run before submitting.
+7. Lead Magnet Formula Worksheet: A worksheet that takes the buyer through a free offer from start to finish: the title, the format, how to offer it from the stage, and the landing page where the audience signs up. The landing page section follows the structure of Ashley's own opt-in page, which converts at nearly 50%. The goal is to leave every talk with a way for the room to join the speaker's email list.
+8. 5-Email Welcome Sequence Guide: A guide to the five emails every new subscriber gets after signing up: Deliver, Teach, Story, Proof, and Bridge. Each email comes with a template and prompts for what to pull from market research, plus a completed sample sequence to model and the steps to turn the sequence on. Every new subscriber from a talk is then warmed up toward the speaker's offer automatically.
+
+Common questions about the kit:
+
+- Who it's for: entrepreneurs with expertise and an offer that gets results who want speaking to bring them clients, including people who haven't spoken yet.
+- AI tools: any AI tool with web search turned on works, including ChatGPT, Claude, Gemini and Copilot.
+- Industries: OTOVA's team has run this system for clients in health and wellness, mental health, education, social justice, leadership, law and aesthetics.
+- Timing: conferences usually choose speakers 6 to 12 months ahead; organizations and podcasts can move faster. One OTOVA client had her first acceptance within 30 days, with OTOVA's team doing the pitching.
+- Results: one Speaker's Vault member reported securing 3 speaking opportunities in the 3 days after applying from the list.
+- Support: buyers can bring questions to monthly office hours with Ashley or email hey@otovaagency.com anytime.
+- Updates: the kit is updated as OTOVA's team learns what's getting its clients results, and every update is included at no extra cost.
+- Kit vs. agency: it's the same system. With the kit you run it yourself for a one-time $297. When OTOVA's team runs it for you, it starts at $2,500 a month.
+- Format: it's a toolkit, not a course. The only video is a walkthrough that shows where to start.
+
+## Services
+
+- [Visibility Services for Speakers](https://otovaagency.com/brand-authority-building): Done-for-you speaking placements, email marketing, and social media for experts who want to monetize after the stage. OTOVA onboards 3 clients per month.
+- [The Authority Accelerator](https://otovaagency.com/authority-accelerator): A done-with-you visibility build for entrepreneurs with a team. OTOVA builds your speaking pipeline, trains your team to run it, and hands you the finished assets.
+- [Book a Visibility Strategy Call](https://otovaagency.com/book-visibility-consultation): Schedule a visibility strategy call and get a personalized Speaker Roadmap with 5 opportunities tailored to your expertise.
+- [Apply to Work With OTOVA](https://otovaagency.com/apply): Application for OTOVA's done-for-you services.
+
+## About
+
+- [About Ashley Alleyne](https://otovaagency.com/female-entrepreneur-ceo): Ashley helps established speakers land stages that turn impact into income. She is a former school psychologist and the founder of OTOVA.
+- [Client Success Stories](https://otovaagency.com/client-success-videos): Real client stories of securing speaking engagements, building thought leadership and growing visibility.
+
+## Optional
+
+- [Home](https://otovaagency.com/): Done-for-you speaking placements for coaches and consultants. OTOVA researches, pitches, and builds the system that turns every audience into paying clients.

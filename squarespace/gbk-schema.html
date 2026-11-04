@@ -1,0 +1,241 @@
+<!-- =====================================================================
+     GET BOOKED KIT · STRUCTURED DATA (otovaagency.com/resources)
+     Replaces the existing application/ld+json script inside the sales
+     page Code Block. Same graph as the live page, plus: organization
+     and founder descriptions, areas of expertise, the product's audience and
+     category, and the Flodesk checkout link as the offer URL.
+     Keep the FAQ text identical to the visible FAQ on the page.
+====================================================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://otovaagency.com/resources#webpage",
+      "url": "https://otovaagency.com/resources",
+      "name": "Get Booked Kit | Get Booked to Speak Consistently | OTOVA",
+      "description": "Get booked to speak consistently and turn those rooms into clients with the pitch templates and proposals OTOVA uses for its clients. Built for you to run in 2 hours a week.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://otovaagency.com/#website",
+        "url": "https://otovaagency.com",
+        "name": "OTOVA Brand Visibility Agency",
+        "publisher": {
+          "@id": "https://otovaagency.com/#organization"
+        }
+      },
+      "about": {
+        "@id": "https://otovaagency.com/resources#product"
+      },
+      "mainEntity": {
+        "@id": "https://otovaagency.com/resources#product"
+      },
+      "video": {
+        "@id": "https://otovaagency.com/resources#video"
+      },
+      "author": {
+        "@id": "https://otovaagency.com/#founder"
+      },
+      "publisher": {
+        "@id": "https://otovaagency.com/#organization"
+      },
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://otovaagency.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Get Booked Kit",
+            "item": "https://otovaagency.com/resources"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://otovaagency.com/resources#product",
+      "name": "Get Booked Kit",
+      "description": "The Get Booked Kit gives you the system my team uses to get our clients booked to speak consistently, so you can run it yourself in only 2 hours a week. It includes eight Google Docs and Google Sheets you copy into your own Drive: AI Speaking Opportunity Research Prompt, The Speaker’s Vault, Speaking Opportunity Tracker, Speaker One-Sheet Guides, Pitch Email Templates, Conference Proposal Guide, Lead Magnet Formula Worksheet, and 5-Email Welcome Sequence Guide.",
+      "brand": {
+        "@type": "Brand",
+        "name": "OTOVA"
+      },
+      "url": "https://otovaagency.com/resources",
+      "image": "https://i.vimeocdn.com/video/2216105440-82df341ce770c1c82ccde5899eaaca4e69bbd3b3987e71fff48920d0b7b1e302-d_1280x720?region=us",
+      "subjectOf": {
+        "@id": "https://otovaagency.com/resources#video"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "297.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://otova.myflodesk.com/getbookedkit",
+        "seller": {
+          "@id": "https://otovaagency.com/#organization"
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "refundType": "https://schema.org/FullRefund",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
+      },
+      "category": "Speaker booking toolkit",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Entrepreneurs who speak, including coaches, consultants, authors and other experts"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://otovaagency.com/resources#video",
+      "name": "How My Team Gets Our Clients Booked to Speak",
+      "description": "Watch this 6-minute video to see how my team gets our clients booked, and how you can run the same system yourself.",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/2216105440-82df341ce770c1c82ccde5899eaaca4e69bbd3b3987e71fff48920d0b7b1e302-d_1280x720?region=us",
+      "uploadDate": "2026-10-22",
+      "duration": "PT6M18S",
+      "embedUrl": "https://player.vimeo.com/video/1238609750",
+      "publisher": {
+        "@id": "https://otovaagency.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://otovaagency.com/resources#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "I haven’t spoken yet. Is this for me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, as long as you have expertise and an offer that gets results. The kit starts with research, so your first step is finding the rooms where your ideal clients already are. You build your one-sheet and send your first pitch from there."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long until I get booked?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the room. Conferences usually choose speakers 6 to 12 months ahead, so an acceptance this month may be for next year. Organizations and podcasts can move faster. One of our clients had her first acceptance within 30 days, with my team doing the pitching. When an organization says no, it often means “not this budget year,” so your tracker keeps that contact ready for the next one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if what’s working changes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Then the kit changes with it. As my team and I learn what’s getting our clients results, I update the kit, and every update is yours at no additional cost. You’ll get an email each time something new is added."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I get stuck or want feedback on my work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bring it to office hours. On the first Tuesday of every month, from 2 to 3 PM ET, you can ask me anything about the kit and get my feedback on your strategy. You can also email me your questions anytime."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a specific AI tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Any AI tool with web search turned on works, including ChatGPT, Claude, Gemini and Copilot."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will this work in my industry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "My team has run this system for clients in health and wellness, mental health, education, social justice, leadership, law and aesthetics. The rooms change from one industry to the next. The way you find and pitch them stays the same."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What’s the difference between the kit and hiring your team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It’s the same system. With the kit, you run it yourself for a one-time $297. When my team runs it for you, it starts at $2,500 a month, and we handle the pitching and your marketing for you. If you start with the kit and want support later, the application is always open."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this a course?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, it’s a toolkit that gives you guides, templates, prompts and a tracker you copy into your own Google Drive and use right away. The only video is a walkthrough that shows you where to start and how to get the most out of the kit to see results."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://otovaagency.com/#organization",
+      "name": "OTOVA Brand Visibility Agency",
+      "alternateName": "OTOVA",
+      "url": "https://otovaagency.com",
+      "email": "hey@otovaagency.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brooklyn",
+        "addressRegion": "NY",
+        "addressCountry": "US"
+      },
+      "founder": {
+        "@id": "https://otovaagency.com/#founder"
+      },
+      "sameAs": [
+        "https://www.tiktok.com/@otovaagency",
+        "https://www.instagram.com/otovaagency",
+        "https://www.linkedin.com/in/otova"
+      ],
+      "description": "OTOVA is a brand visibility agency in Brooklyn, NY that helps entrepreneurs who speak (coaches, consultants, authors and other experts) get booked on stages, podcasts and in organizations, and turn those audiences into paying clients.",
+      "knowsAbout": [
+        "Speaker booking",
+        "Speaking opportunities",
+        "Conference proposals",
+        "Speaker one-sheets",
+        "Pitch emails",
+        "Email marketing for speakers",
+        "Brand visibility"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://otovaagency.com/#founder",
+      "name": "Ashley Alleyne",
+      "url": "https://otovaagency.com/female-entrepreneur-ceo",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://otovaagency.com/#organization"
+      },
+      "description": "Ashley Alleyne is the founder of OTOVA Brand Visibility Agency and a former school psychologist. She helps established speakers land stages that turn impact into income.",
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Founder, brand visibility agency"
+      },
+      "knowsAbout": [
+        "Speaker booking",
+        "Speaking opportunities",
+        "Conference proposals",
+        "Speaker one-sheets",
+        "Pitch emails",
+        "Email marketing for speakers",
+        "Brand visibility"
+      ]
+    }
+  ]
+}
+</script>

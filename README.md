@@ -21,7 +21,7 @@ Open http://localhost:3000. Validate changes with `npm run lint` and `npm run bu
 
 ## Walkthrough video
 
-Until the walkthrough is recorded, the section shows a coming-soon placeholder. To add it, set `WALKTHROUGH_EMBED_URL` in `src/components/VSLPlayer.tsx` to the video's Vimeo player URL (`https://player.vimeo.com/video/VIDEO_ID`), not the public watch URL. The player supports fullscreen and does not autoplay.
+The walkthrough is the Vimeo video "Get Booked Kit Setup and Resource Guide". To swap it, set `WALKTHROUGH_EMBED_URL` in `src/components/VSLPlayer.tsx` to the new video's Vimeo player URL (`https://player.vimeo.com/video/VIDEO_ID`), not the public watch URL. Set it to `null` to show the coming-soon placeholder. The player supports fullscreen and does not autoplay.
 
 ## Colors
 
@@ -33,6 +33,6 @@ The setup checklist intentionally puts positioning and talk titles before opport
 
 Build with `npm run build` and serve with `npm start`, or deploy as a Next.js project on your hosting provider. This checkout is not connected to a Git repository or deployment project. No deployment was performed.
 
-Search engines are instructed not to index this customer resource hub. This is not authentication; apply the client's chosen access control at the hosting/application layer if access must be restricted. Google resource permissions are managed by their owners. The resource destinations are preserved exactly as supplied, including the Speaker's Vault shared-sheet URL.
+Search engines and AI crawlers are kept out of this customer resource hub three ways: `src/app/robots.ts` disallows every path, `next.config.ts` sends an `X-Robots-Tag: noindex` header on every response, and `src/app/layout.tsx` sets the matching robots meta tag. Keep all three; the public sales page and its SEO live on Squarespace (see `squarespace/`). This is not authentication; apply the client's chosen access control at the hosting/application layer if access must be restricted. Google resource permissions are managed by their owners. The resource destinations are preserved exactly as supplied, including the Speaker's Vault shared-sheet URL.
 
 The legacy sales-page components remain in `src/components/` for reference but are not rendered by this hub. No checkout or purchase flow is included on this page.
