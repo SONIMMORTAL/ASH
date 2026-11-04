@@ -1,9 +1,10 @@
 import { Video } from "lucide-react";
 
 // The walkthrough's Vimeo player URL (https://player.vimeo.com/video/VIDEO_ID).
+// title, byline and portrait are off so only the video shows.
 // Set to null to show the coming-soon placeholder instead.
 export const WALKTHROUGH_EMBED_URL: string | null =
-  "https://player.vimeo.com/video/1243103915?badge=0&autopause=0&player_id=0&app_id=58479";
+  "https://player.vimeo.com/video/1243103915?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479";
 
 export function VSLPlayer() {
   return (
